@@ -8,19 +8,12 @@ const {
   EVENTS,
 } = require("@bot-whatsapp/bot");
 
-const QRPortalWeb = require('@bot-whatsapp/portal')
 const { init } = require("bot-ws-plugin-openai");
 const BaileysProvider = require("@bot-whatsapp/provider/baileys");
 const MockAdapter = require("@bot-whatsapp/database/mock");
+
 const { handlerAI } = require("./utils");
 const { textToVoice } = require("./services/eventlab");
-
-/**
- *
- * Plugin settings
- * https://platform.openai.com/docs/api-reference
- *
- */
 
 const employeesAddonConfig = {
   model: "gpt-3.5-turbo",
@@ -28,13 +21,6 @@ const employeesAddonConfig = {
   apiKey: process.env.OPENAI_API_KEY,
 };
 const employeesAddon = init(employeesAddonConfig);
-
-/**
- *
- * 🙉 Flow del Bot
- * https://bot-whatsapp.netlify.app/docs/flows/
- *
- */
 
 const flowVentas = addKeyword(["pedir", "ordenar"])
   .addAnswer(
@@ -110,8 +96,6 @@ const main = async () => {
     provider: adapterProvider,
     database: adapterDB,
   });
-
-  QRPortalWeb()
 };
 
 main();
