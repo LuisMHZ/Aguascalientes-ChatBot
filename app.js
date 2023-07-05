@@ -29,7 +29,23 @@ const flowVentas = addKeyword(["pedir", "ordenar"])
     async (_, { flowDynamic }) => {
       console.log("🙉 texto a voz....");
       const path = await textToVoice(
-        "Si claro como te puedo ayudar si gustas enviame detalle de tecnicos que necesitas para tu servidor"
+        "Si claro como te puedo ayudar si gustas enviame detalle de tecnicos que necesitas para tu servidor",
+        "hombre"
+      );
+      console.log(`🙉 Fin texto a voz....[PATH]:${path}`);
+      await flowDynamic([{ body: "escucha", media: path }]);
+    }
+  );
+
+  const flowVentasM = addKeyword(["mujer"])
+  .addAnswer(
+    ["Claro que te interesa?", "mejor te envio audio.."],
+    null,
+    async (_, { flowDynamic }) => {
+      console.log("🙉 texto a voz....");
+      const path = await textToVoice(
+        "Si claro como te puedo ayudar si gustas enviame detalle de tecnicos que necesitas para tu servidor",
+        "mujer"
       );
       console.log(`🙉 Fin texto a voz....[PATH]:${path}`);
       await flowDynamic([{ body: "escucha", media: path }]);
@@ -66,6 +82,7 @@ const main = async () => {
     flowVentas,
     flowSoporte,
     flowDemo,
+    flowVentasM
   ]);
 
   const adapterProvider = createProvider(BaileysProvider);

@@ -6,7 +6,10 @@ const fs = require('node:fs')
  * @returns
 */
 
-const textToVoice = async (text,voiceId = 'pNInz6obpgDQGcFmaJgB') => {
+const textToVoice = async (text,id) => {
+  var voiceId;
+  if (id == "mujer") voiceId = '21m00Tcm4TlvDq8ikWAM';
+  else voiceId = 'pNInz6obpgDQGcFmaJgB';
   const EVENT_TOKEN = process.env.EVENT_TOKEN ?? "";
   const URL = `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`;
 
@@ -19,8 +22,8 @@ const textToVoice = async (text,voiceId = 'pNInz6obpgDQGcFmaJgB') => {
     text,
     model_id: "eleven_multilingual_v1",
     voice_settings: {
-      stability: 1,
-      similarity_boost: 0.8,
+      stability: 0.5,
+      similarity_boost: 0.8
     },
   });
 
