@@ -10,7 +10,7 @@ const handlerAI = async (ctx) => {
   await fs.writeFile(pathTmpOgg, buffer);
   await convertOggMp3(pathTmpOgg, pathTmpMp3);
   const text = await voiceToText(pathTmpMp3);
-  return text; //el habla1!!
+  return text; //Audio transcrito a texto
 };
 
 module.exports = { handlerAI };

@@ -8,7 +8,7 @@ const fs = require('node:fs')
 
 const textToVoice = async (text,id) => {
   var voiceId;
-  if (id == "mujer") voiceId = '21m00Tcm4TlvDq8ikWAM';
+  if (id == "FEMALE") voiceId = '21m00Tcm4TlvDq8ikWAM';
   else voiceId = 'pNInz6obpgDQGcFmaJgB';
   const EVENT_TOKEN = process.env.EVENT_TOKEN ?? "";
   const URL = `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`;

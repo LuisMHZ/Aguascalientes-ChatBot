@@ -30,7 +30,7 @@ const flowVentas = addKeyword(["pedir", "ordenar"])
       console.log("🙉 texto a voz....");
       const path = await textToVoice(
         "Si claro como te puedo ayudar si gustas enviame detalle de tecnicos que necesitas para tu servidor",
-        "hombre"
+        "MALE"
       );
       console.log(`🙉 Fin texto a voz....[PATH]:${path}`);
       await flowDynamic([{ body: "escucha", media: path }]);
@@ -45,7 +45,7 @@ const flowVentas = addKeyword(["pedir", "ordenar"])
       console.log("🙉 texto a voz....");
       const path = await textToVoice(
         "Si claro como te puedo ayudar si gustas enviame detalle de tecnicos que necesitas para tu servidor",
-        "mujer"
+        "FEMALE"
       );
       console.log(`🙉 Fin texto a voz....[PATH]:${path}`);
       await flowDynamic([{ body: "escucha", media: path }]);
