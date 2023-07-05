@@ -13,7 +13,7 @@ const BaileysProvider = require("@bot-whatsapp/provider/baileys");
 const MockAdapter = require("@bot-whatsapp/database/mock");
 
 const { handlerAI } = require("./utils");
-const { textToVoice } = require("./services/eventlab");
+const { textToVoice } = require("./services/elevenlabs_service");
 
 const employeesAddonConfig = {
   model: "gpt-3.5-turbo",

@@ -22,8 +22,8 @@ const textToVoice = async (text,id) => {
     text,
     model_id: "eleven_multilingual_v1",
     voice_settings: {
-      stability: 0.5,
-      similarity_boost: 0.8
+      stability: 0.45,
+      similarity_boost: 0.6
     },
   });
 
@@ -34,9 +34,10 @@ const textToVoice = async (text,id) => {
     redirect: "follow",
   };
 
+  let fecha = new Date();
   const response = await fetch(URL, requestOptions);
   const buffer = await response.arrayBuffer();
-  const pathFile = `${process.cwd()}/tmp/${Date.now()}-audio.mp3`;
+  const pathFile = `${process.cwd()}/tts_response/AUD-${fecha.getFullYear()}${fecha.getMonth()+1}${fecha.getDate()}-${fecha.getHours()}${fecha.getMinutes()}${fecha.getMilliseconds()}-${id}.mp3`;
   fs.writeFileSync(pathFile, Buffer.from(buffer));
   
   return pathFile;
