@@ -74,6 +74,15 @@ const flowDemo = addKeyword("demo").addAction((ctx, { gotoFlow }) => {
   gotoFlow(flowVentas);
 });
 
+/**
+ * Flujos
+ */
+const TouristAgentFlow = require("./flows/TouristAgentFlow");
+const WeatherFlow = require("./flows/WeatherFlow");
+
+/**
+ * Función Principal
+ */
 const main = async () => {
   const adapterDB = new MockAdapter();
 
@@ -82,31 +91,12 @@ const main = async () => {
     flowVentas,
     flowSoporte,
     flowDemo,
-    flowVentasM
+    flowVentasM,
+    TouristAgentFlow,
+    WeatherFlow
   ]);
 
   const adapterProvider = createProvider(BaileysProvider);
-
-  /**
-   * 🤔 Empledos digitales
-   * Imaginar cada empleado descrito con sus deberes de manera explicita
-   */
-  const employees = [
-    {
-      name: "EMPLEADO_VENDEDOR",
-      description:
-        "Soy Rob el vendedor amable encargado de atentender si tienes intencion de comprar o interesado en algun producto, mis respuestas son breves. Envia 1-3 emojis:🤖 🚀 🤔",
-      flow: flowVentas,
-    },
-    {
-      name: "EMPLEADO_DEVOLUCIONES",
-      description:
-        "Soy Steffany, encargada de las devoluciones, reembolsos problemas que tengas con tus productos. mis respuestas breves.",
-      flow: flowSoporte,
-    },
-  ];
-
-  employeesAddon.employees(employees);
 
   createBot({
     flow: adapterFlow,

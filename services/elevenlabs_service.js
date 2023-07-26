@@ -10,7 +10,7 @@ const textToVoice = async (text,id) => {
   var voiceId;
   if (id == "FEMALE") voiceId = '21m00Tcm4TlvDq8ikWAM';
   else voiceId = 'pNInz6obpgDQGcFmaJgB';
-  const EVENT_TOKEN = process.env.EVENT_TOKEN ?? "";
+  const EVENT_TOKEN = process.env.ELEVEN_TOKEN ?? "";
   const URL = `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`;
 
   const header = new Headers();
@@ -23,7 +23,9 @@ const textToVoice = async (text,id) => {
     model_id: "eleven_multilingual_v1",
     voice_settings: {
       stability: 0.45,
-      similarity_boost: 0.6
+      similarity_boost: 0.6,
+      style:0.0,
+      use_speaker_boost:true
     },
   });
 
