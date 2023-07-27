@@ -5,8 +5,8 @@ const { voiceToText } = require('./services/whisper');
 
 const handlerAI = async (ctx) => {
   const buffer = await downloadMediaMessage(ctx, "buffer");
-  const pathTmpOgg = `${process.cwd()}/tmp/voice-note-${Date.now()}.ogg`;
-  const pathTmpMp3 = `${process.cwd()}/tmp/voice-note-${Date.now()}.mp3`;
+  const pathTmpOgg = `${process.cwd()}/user_audio/voice-note-${Date.now()}.ogg`;
+  const pathTmpMp3 = `${process.cwd()}/user_audio/voice-note-${Date.now()}.mp3`;
   await fs.writeFile(pathTmpOgg, buffer);
   await convertOggMp3(pathTmpOgg, pathTmpMp3);
   const text = await voiceToText(pathTmpMp3);
