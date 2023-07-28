@@ -6,13 +6,19 @@ const flowPrincipal = addKeyword(['hola', 'buenas', 'ola', 'buenos días', 'buen
     .addAnswer(
         [
             '¿En que te puedo ayudar el día de hoy?',
-            'Información Turística',
-            '3. Información del transporte público de la ciudad',
-            'Información de ventos y festivales',
-            'Gastronomía del destino',
-            'Información Práctica',
-            'Conocer Más'
+            '1. Información Turística ℹ️',
+            '2. Información del transporte público de la ciudad 🚌',
+            '3. Información de ventos y festivales 🎉',
+            '4. Gastronomía del destino 👨🏼‍🍳',
+            '5. Información Práctica 📄',
+            '6. Conocer Más ➕'
         ],
+        null,
+        null,
+        []
+    )
+    .addAnswer(
+        ['Si deseas más información, escribe "AGENTE" para contactarte con una persona encantada de resolver tus dudas 👌'],
         null,
         null,
         [BusFlow]
