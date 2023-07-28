@@ -56,19 +56,19 @@ const flowVentas = addKeyword(["conocer más", "ordenar"])
 /**
  * Rutas de Camión
  */
-const flowR1 = addKeyword(["RUTA1", "RUTA 1"])
+const flowR1 = addKeyword(["RUTA1","RUTA 1","ruta 1","ruta1","Ruta1","Ruta 1"], { sensitive: true })
 .addAnswer('A continuación, te muestro el trayecto realizado por la Ruta 1', {
     media: 'https://aguascalientes.gob.mx/cmov/pdf/RUTA_01_LAS%20MARGARITAS_VICENTE%20GUERRERO.pdf'})
-const flowR2 = addKeyword(["RUTA2", "RUTA 2"])
+const flowR2 = addKeyword(["RUTA2","RUTA 2","ruta 2","ruta2","Ruta2","Ruta 2"], { sensitive: true })
 .addAnswer('A continuación, te muestro el trayecto realizado por la Ruta 2', {
     media: 'https://aguascalientes.gob.mx/cmov/pdf/RUTA_02_LOS%20CACTUS_CENTRO(JARD%C3%8DN%20CARPIO).pdf'})
-const flowR3 = addKeyword(["RUTA3", "RUTA 3"])
+const flowR3 = addKeyword(["RUTA3","RUTA 3","ruta 3","ruta3","Ruta3","Ruta 3"], { sensitive: true })
 .addAnswer('A continuación, te muestro el trayecto realizado por la Ruta 3', {
     media: 'https://aguascalientes.gob.mx/cmov/pdf/RUTA_03_LA%20RIBERA_UAA%20SUR_.pdf'})
-const flowR4 = addKeyword(["RUTA4", "RUTA 4"])
+const flowR4 = addKeyword(["RUTA4","RUTA 4","ruta 4","ruta4","Ruta4","Ruta 4"], { sensitive: true })
 .addAnswer('A continuación, te muestro el trayecto realizado por la Ruta 4', {
     media: 'https://aguascalientes.gob.mx/cmov/pdf/RUTA_04_JES%C3%9AS%20MAR%C3%8DA_TERMINAL%20SUR.pdf'})
-const flowR5 = addKeyword(["RUTA5", "RUTA 5"])
+const flowR5 = addKeyword(["RUTA5","RUTA 5","ruta 5","ruta5","Ruta5","Ruta 5"], { sensitive: true })
 .addAnswer('A continuación, te muestro el trayecto realizado por la Ruta 5', {
     media: 'https://aguascalientes.gob.mx/cmov/pdf/RUTA_05_LA%20RIBERA_VICENTEGUERRERO.pdf'})
 const flowR6 = addKeyword(["RUTA6", "RUTA 6"])
@@ -175,13 +175,13 @@ const flowR45 = addKeyword(["RUTA45", "RUTA 45"])
     media: 'https://aguascalientes.gob.mx/cmov/pdf/RUTA_45_LOS%20CACTUS_UAA.pdf'})
 const flowR46 = addKeyword(["RUTA46", "RUTA 46"])
 .addAnswer('A continuación, te muestro el trayecto realizado por la Ruta 46', {
-    media: 'https://aguascalientes.gob.mx/cmov/pdf/RUTA_45_LOS%20CACTUS_UAA.pdf'})
-const flowR47 = addKeyword(["RUTA47", "RUTA 47"])
+    media: 'https://aguascalientes.gob.mx/cmov/pdf/RUTA_46_CALVILLITO_VICENTE%20GUERRERO.pdf'})
+const flowR47 = addKeyword("RUTA47", { sensitive: true })
 .addAnswer('A continuación, te muestro el trayecto realizado por la Ruta 47', {
-    media: 'https://aguascalientes.gob.mx/cmov/pdf/RUTA_45_LOS%20CACTUS_UAA.pdf'})
+    media: 'https://aguascalientes.gob.mx/cmov/pdf/RUTA_47_CL%C3%8DNICA%20I0_SAN%20MARCOS.pdf'})
 const flowR48 = addKeyword(["RUTA48", "RUTA 48"])
 .addAnswer('A continuación, te muestro el trayecto realizado por la Ruta 48', {
-    media: 'https://aguascalientes.gob.mx/cmov/pdf/RUTA_45_LOS%20CACTUS_UAA.pdf'})
+    media: 'https://aguascalientes.gob.mx/cmov/pdf/RUTA_48_BELLAVISTA_CENTRO%20(PANTE%C3%93N%20DE%20LA%20CRUZ).pdf'})
 const flowR50 = addKeyword(["RUTA50", "RUTA 50"])
 .addAnswer('A continuación, te muestro el trayecto realizado por la Ruta 50', {
     media: 'https://aguascalientes.gob.mx/cmov/pdf/RUTA_50_CHICAHUALES_UTA.pdf'})
@@ -211,7 +211,6 @@ const PrimaryFlow = require("./flows/PrimaryFlow");
 const TouristAgentFlow = require("./flows/PersonalTouristAgentFlow");
 const flowVoiceNote = require("./flows/VoiceNoteflow");
 const ByeFlow = require("./flows/ByeFlow");
-const RoutesFlow = require("./flows/RoutesFlow");
 
 /**
  * Función Principal
