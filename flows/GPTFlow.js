@@ -44,8 +44,6 @@ module.exports = {
         await flowDynamic(textFromAI.text);
       })
       .addAnswer(
-        `Tienes otra pregunta? o duda?`,
-        { capture: true },
         async (ctx, { fallBack }) => {
           // ctx.body = Es lo que la persona escribe.
           
