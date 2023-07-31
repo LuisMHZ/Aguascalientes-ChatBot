@@ -14,8 +14,8 @@ const MockAdapter = require("@bot-whatsapp/database/mock");
 /**
  * ChatGPT
  */
-//const ChatGPTClass = require("./chatGPT/chatgpt.class");
-//const chatGPT = new ChatGPTClass();
+const ChatGPTClass = require("./chatgpt.class");
+const chatGPT = new ChatGPTClass();
 
 /**
  * Servicio de Whisper y ElevenLabs
@@ -195,15 +195,6 @@ const flowRUTR = addKeyword(["RUTAUTR", "RUTA UTR"])
 .addAnswer('A continuación, te muestro el trayecto realizado por la Ruta Especial UTR', {
     media: 'https://aguascalientes.gob.mx/cmov/pdf/RUTA_ESPECIAL_UTR.pdf'})
 
-const flowSoporte = addKeyword(["necesito ayuda"]).addAnswer(
-  "Claro como te puedo ayudar?"
-);
-
-
-const flowDemo = addKeyword("demo").addAction((ctx, { gotoFlow }) => {
-  gotoFlow(flowVentas);
-});
-
 /**
  * Flujos
  */
@@ -211,6 +202,7 @@ const PrimaryFlow = require("./flows/PrimaryFlow");
 const TouristAgentFlow = require("./flows/PersonalTouristAgentFlow");
 const flowVoiceNote = require("./flows/VoiceNoteflow");
 const ByeFlow = require("./flows/ByeFlow");
+const { GPTFlow } = require("./flows/GPTFlow")
 
 /**
  * Función Principal
@@ -221,15 +213,14 @@ const main = async () => {
   const adapterFlow = createFlow([
     flowVoiceNote,
     flowVentas,
-    flowSoporte,
-    flowDemo,
     flowVentasM,
     TouristAgentFlow,
     PrimaryFlow,
     ByeFlow,
     flowR1,flowR2,flowR3,flowR4,flowR5,flowR6,flowR7,flowR8,flowR9,flowR10,flowR11,flowR12,flowR14,flowR16,flowR18,flowR19,flowR20N,flowR20S,flowR23,
     flowR24,flowR25,flowR27,flowR28,flowR29,flowR30,flowR33,flowR34,flowR35,flowR36,flowR37,flowR38,flowR39,flowR40N,flowR40S,flowR41T,flowR41A,
-    flowR42,flowR43,flowR45,flowR46,flowR47,flowR48,flowR50,flowR50B,flowR51,flowRUTR
+    flowR42,flowR43,flowR45,flowR46,flowR47,flowR48,flowR50,flowR50B,flowR51,flowRUTR,
+    GPTFlow(chatGPT)
   ]);
 
   const adapterProvider = createProvider(BaileysProvider);

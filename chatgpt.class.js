@@ -10,7 +10,7 @@ class ChatGPTClass {
   }
 
   /**
-   * Esta funciona inicializa
+   * Uso de API Key de ChatGPT
    */
   init = async () => {
     const { ChatGPTAPI } = await import("chatgpt");
@@ -23,9 +23,10 @@ class ChatGPTClass {
 
   /**
    * Manejador de los mensajes
-   * sun funcion es enviar un mensaje a wahtsapp
+   * Su función es enviar un mensaje a WhatsApp
    * @param {*} ctx 
    */
+
   handleMsgChatGPT = async (body) => {
     const interaccionChatGPT = await this.openai.sendMessage(body, {
       conversationId: !this.queue.length
