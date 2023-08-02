@@ -203,7 +203,6 @@ const TouristAgentFlow = require("./flows/PersonalTouristAgentFlow");
 const flowVoiceNote = require("./flows/VoiceNoteflow");
 const ByeFlow = require("./flows/ByeFlow");
 const { GPTFlow } = require("./flows/GPTFlow");
-const AddInfoFlow = require("./flows/AddInfoFlow");
 
 /**
  * Función Principal
@@ -217,7 +216,6 @@ const main = async () => {
     flowVentas,
     flowVentasM,
     TouristAgentFlow,
-    AddInfoFlow,
     ByeFlow,
     flowR1,flowR2,flowR3,flowR4,flowR5,flowR6,flowR7,flowR8,flowR9,flowR10,flowR11,flowR12,flowR14,flowR16,flowR18,flowR19,flowR20N,
     flowR20S,flowR23,flowR24,flowR25,flowR27,flowR28,flowR29,flowR30,flowR33,flowR34,flowR35,flowR36,flowR37,flowR38,flowR39,
