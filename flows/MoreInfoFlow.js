@@ -40,5 +40,6 @@ const MoreInfoFlow = addKeyword(["6", "Más Información", "MAS"])
             '\n 👉🏼 Viva Aguascalientes: https://apps.apple.com/mx/app/viva-aguascalientes/id555591399',
             '\n 👉🏼 Aguascalientse Digital: https://apps.apple.com/mx/app/aguascalientes-digital/id640129476'
         ])
+    .addAnswer('Si requieres otra información, escribe *MENU* para regresar al menú principal.')
 
 module.exports = MoreInfoFlow;

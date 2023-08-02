@@ -1,8 +1,8 @@
 const { addKeyword } = require("@bot-whatsapp/bot");
-const TransportFlow = require("./TransportFlow");
 const EventsFlow = require("./EventsFlow")
 const AddInfoFlow = require("./SimpleInfoFlow");
 const MoreInfoFlow = require("./MoreInfoFlow");
+const ByeFlow = require("./ByeFlow");
 
 const flowPrincipal = addKeyword(['hola', 'buenas', 'ola', 'buenos días', 'buenas tardes', 'buenas noches', 'menú', 'menu', 'MENU'])
     .addAnswer('¡Hola! Soy Aguascalientes Chatbot, un experto en el turismo de la ciudad.')
@@ -22,7 +22,7 @@ const flowPrincipal = addKeyword(['hola', 'buenas', 'ola', 'buenos días', 'buen
         ['Adicionalmente, si deseas más información escribe "AGENTE" para contactarte con una persona especializada y destinada a resolver tus dudas 👌'],
         null,
         null,
-        [AddInfoFlow, TransportFlow, EventsFlow, MoreInfoFlow]
+        [EventsFlow, AddInfoFlow, MoreInfoFlow, ByeFlow]
     )
 
     module.exports = flowPrincipal;

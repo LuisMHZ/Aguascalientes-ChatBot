@@ -1,4 +1,5 @@
 const { addKeyword } = require("@bot-whatsapp/bot");
+const PrimaryFlow = require("./PrimaryFlow");
 
 const BusHourFlow = addKeyword(['HORARIO', 'Horario', 'Horario camiones'])
 .addAnswer(
@@ -60,8 +61,8 @@ const BusFlow = addKeyword(['BUS', 'Bus', 'Camión'])
             '¿Necesitas más información?',
             '\n🕛 Escribe *HORARIO* para conocer los horarios de operación del servicio de camiones.',
             '\n🪙 Escribe *PRECIO* para conocer más información sobre precios y formas de pago.',
-            '\n➕ Para mayor información, escribe *MAS*.'
-
+            '\n➕ Para mayor información, escribe *MAS*.',
+            '\nEscribe *TRANSPORTE* para regresar con el asistente de movilidad.'
         ],
         null,
         null,
@@ -85,6 +86,7 @@ const TaxiFlow = addKeyword(['TAXI', 'Taxi'])
             '\n Android: https://play.google.com/store/search?q=yosivoy&c=apps',
             '\n iOS: https://apps.apple.com/mx/app/yosivoy/id6448068922'
         ])
+    .addAnswer('\nEscribe *TRANSPORTE* para regresar con el asistente de movilidad.')
 
 const CombiFlow = addKeyword(['COMBI', 'Combi'])
     .addAnswer('Las combis (o transporte colectivo foráneo) son vehículos con capacidad de hasta diecinueve personas con rutas definidas y servicio que une a las áreas suburbanas, zonas conurbadas y comunidades rurales con los principales centros de población del Estado. Se distinguen por tener un diseño como el mostrado en la imagen.', {
@@ -99,6 +101,7 @@ const CombiFlow = addKeyword(['COMBI', 'Combi'])
             '\n📌 Para conocer más información sobre destinos, horarios y precios es conveniente visitar la central de combis:',
             '\n 👉🏼 Ubicación de la central de combis en Google Maps: https://goo.gl/maps/DascC9tG4R3zAwHP7',
         ])
+    .addAnswer('\nEscribe *TRANSPORTE* para regresar con el asistente de movilidad.')
 
 const RideFlow = addKeyword(['RIDE', 'Ride'])
     .addAnswer('Un servicio de ridesharing (también conocido como transporte compartido o servicio de transporte privado) es un sistema de transporte en el cual los conductores particulares utilizan sus vehículos personales para transportar a pasajeros que necesitan un viaje.', {
@@ -112,8 +115,9 @@ const RideFlow = addKeyword(['RIDE', 'Ride'])
             '\nLa forma de pago únicamente se podrá realizar mediante la propia plataforma tecnológica administrada por la empresa de redes de transporte.',
         ])
     .addAnswer('ℹ️ Dicho esto, en Aguascalientes los principales servicios de ridesharing son los de las plataformas mostradas en la imagen. Para poder utilizarlos, es cuestión de acceder a la tienda de aplicaciones de tu dispositivo móvil y descargar la que mejor se adapte a tus necesidades.')
+    .addAnswer('\nEscribe *TRANSPORTE* para regresar con el asistente de movilidad.')
 
-const TransportFlow = addKeyword(['2', 'Información de transporte', 'transporte'])
+const TransportFlow = addKeyword(['2', 'TRANSPORTE'])
     .addAnswer(
         [
             '¡Bienvenido! soy el asistente de movilidad de la ciudad, ¿en que te puedo ayudar?',
@@ -122,7 +126,8 @@ const TransportFlow = addKeyword(['2', 'Información de transporte', 'transporte
             '\n🛻 Escribe *COMBI* si necesitas información del servicio de transporte colectivo foráneo.',
             '\n🚗 Escribe *RIDE* si necesitas información de los servicios de ridesharing (vehículo compartido) disponibles en la ciudad.',
             '\nEl transporte público de Aguascalientes es una forma conveniente y accesible de desplazarse por la ciudad.',
-            '\n\nEscribe el texto resaltado en negritas de la opción sobre la cuál deseas conocer más información.'
+            '\n\nEscribe el texto resaltado en negritas de la opción sobre la cuál deseas conocer más información.',
+            '\nSi requieres otra información, escribe *MENU* para regresar al menú principal.'
         ]
     )
     .addAnswer(
@@ -136,7 +141,7 @@ const TransportFlow = addKeyword(['2', 'Información de transporte', 'transporte
         ],
         null,
         null,
-        [BusFlow, TaxiFlow, CombiFlow, RideFlow]
+        [BusFlow, TaxiFlow, CombiFlow, RideFlow, PrimaryFlow]
     )
 
 module.exports = TransportFlow;

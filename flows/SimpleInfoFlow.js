@@ -27,6 +27,6 @@ const AddInfoFlow = addKeyword(['5', 'Información Práctica'])
         '\n San José de Gracia: Ubicado en la zona norte del estado y abarcando una extensa área montañosa y semidesértica, San José de Gracia brinda paisajes naturales muy diversos y atractivos. Es un lugar perfecto para explorar la naturaleza, disfrutar de la cultura local y relajarse en un entorno pintoresco.'
     ])
 
-.addAnswer('Espero que esta información te sea útil. Si deseas más detalles o requieres otra información, escribe *MENU* para regresar al menú principal.')
+.addAnswer('Espero que esta información te sea útil. Si requieres otra información, escribe *MENU* para regresar al menú principal.')
 
 module.exports = AddInfoFlow;
