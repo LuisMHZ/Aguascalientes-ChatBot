@@ -17,22 +17,22 @@ const MoreInfoFlow = addKeyword(["6", "Más Información", "MAS"])
     )
     .addAnswer(
         [
-            '🌐 Páginas Web:',
-            '\n 👉🏼 Viva-Aguascalientes: https://www.vivaaguascalientes.com/',
+            '🌐 *Páginas Web*',
+            '\n 👉🏼 Viva-Aguascalientes: https://www.vivaaguascalientes.com',
             '\n 👉🏼 Visit México: https://visitmexico.com/aguascalientes-5'
         ])
     .addAnswer(
         [
-            '🌐 Redes Sociales:',
-            '\n 👉🏼 Facebook SECTUR AGS: https://www.facebook.com/secturags/',
-            '\n 👉🏼 Facebook Viva Aguascalientes: https://www.facebook.com/VivaAguascalientes/',
-            '\n 👉🏼 Instagram: https://www.instagram.com/vivaaguascalientes_/',
+            '🌐 *Redes Sociales*',
+            '\n 👉🏼 Facebook SECTUR AGS: https://www.facebook.com/secturags',
+            '\n 👉🏼 Facebook Viva Aguascalientes: https://www.facebook.com/VivaAguascalientes',
+            '\n 👉🏼 Instagram: https://www.instagram.com/vivaaguascalientes_',
             '\n 👉🏼 Twitter: https://twitter.com/aguascalientes',
             '\n 👉🏼 TikTok: https://www.tiktok.com/@vivaags'
         ])
     .addAnswer(
         [
-            '📲 Aplicaciones Móviles:',
+            '📲 *Aplicaciones Móviles*',
             '\n Android: ',
             '\n 👉🏼 Viva Aguascalientes: https://play.google.com/store/apps/details?id=mx.gob.aguascalientes.turismo.turismoags',
             '\n 👉🏼 Aguascalientes Digital: https://play.google.com/store/apps/details?id=mx.gob.ags.refrendo',
