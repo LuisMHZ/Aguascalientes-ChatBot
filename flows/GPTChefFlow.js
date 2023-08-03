@@ -19,8 +19,8 @@ const getPrompt = async () => {
  */
 
 module.exports = {
-  GPTChefFlow: (chatgptClass) => {
-    return addKeyword("1", { sensitive: true })
+  GPTFlow2: (chatgptClass) => {
+    return addKeyword("4", { sensitive: true })
       .addAction(async (ctx, { flowDynamic, provider }) => {
         await flowDynamic("Preparando lo necesario para brindarte una experiencia gastronómica de Aguascalientes...");
 
@@ -37,17 +37,19 @@ module.exports = {
 
 
         const textFromAI = await chatgptClass.handleMsgChatGPT(
-          "Quiero información turística de Aguascalientes"
+          "Quiero información gastronómica de Aguascalientes"
         );
 
 
         await flowDynamic(textFromAI.text);
       })
       .addAnswer(
+        `Si tienes alguna duda o pregunta, escribela a continuación. De lo contrario, puedes escribir *MENU* en cualquier momento para regresar al menú principal`,
+        { capture: true },
         async (ctx, { fallBack }) => {
           // ctx.body = Es lo que la persona escribe.
           
-          if(!ctx.body.toLowerCase().includes('ofertas')){
+          if(!ctx.body.toLowerCase().includes('menu')){
               const textFromAI = await chatgptClass.handleMsgChatGPT(ctx.body);
               await fallBack(textFromAI.text);
           }

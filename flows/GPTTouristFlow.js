@@ -1,7 +1,7 @@
 const { addKeyword } = require("@bot-whatsapp/bot");
 const { readFileSync } = require("fs");
 const { join } = require("path");
-const delay = (ms) => new Promise((res =>  setTimeout(res, ms)))
+const delay = (ms) => new Promise((res => setTimeout(res, ms)))
 
 /**
  * Recuperamos el prompt de asistente turístico
@@ -22,7 +22,7 @@ module.exports = {
   GPTFlow: (chatgptClass) => {
     return addKeyword("1", { sensitive: true })
       .addAction(async (ctx, { flowDynamic, provider }) => {
-        await flowDynamic("Preparando lo necesario para brindarte una experiencia única de Aguascalientes...");
+        await flowDynamic("Preparando lo necesario para brindarte una experiencia turística única de Aguascalientes...");
 
         const jid = ctx.key.remoteJid
         const refProvider = await provider.getInstance()
@@ -44,14 +44,14 @@ module.exports = {
         await flowDynamic(textFromAI.text);
       })
       .addAnswer(
-        `Tienes otra pregunta? o duda?`,
+        `Si tienes alguna duda o pregunta, escribela a continuación. De lo contrario, puedes escribir *MENU* en cualquier momento para regresar al menú principal`,
         { capture: true },
         async (ctx, { fallBack }) => {
           // ctx.body = Es lo que la persona escribe.
-          
-          if(!ctx.body.toLowerCase().includes('ofertas')){
-              const textFromAI = await chatgptClass.handleMsgChatGPT(ctx.body);
-              await fallBack(textFromAI.text);
+
+          if (!ctx.body.toLowerCase().includes('menu')) {
+            const textFromAI = await chatgptClass.handleMsgChatGPT(ctx.body);
+            await fallBack(textFromAI.text);
           }
         }
       );

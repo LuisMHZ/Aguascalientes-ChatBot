@@ -4,6 +4,7 @@ const AddInfoFlow = require("./SimpleInfoFlow");
 const MoreInfoFlow = require("./MoreInfoFlow");
 const ByeFlow = require("./ByeFlow");
 const { GPTFlow } = require("./GPTTouristFlow");
+const { GPTFlow2 } = require("./GPTChefFlow");
 
 /**
  * ChatGPT
@@ -26,10 +27,10 @@ const flowPrincipal = addKeyword(['hola', 'buenas', 'ola', 'buenos días', 'buen
         ]
     )
     .addAnswer(
-        ['Adicionalmente, si deseas más información escribe "AGENTE" para contactarte con una persona especializada y destinada a resolver tus dudas 👌'],
+        ['Adicionalmente, si deseas más información puedes escribir "AGENTE" en cualquier momento para contactarte con una persona especializada y destinada a resolver tus dudas 👌'],
         null,
         null,
-        [EventsFlow, AddInfoFlow, MoreInfoFlow, GPTFlow(chatGPT), ByeFlow]
+        [EventsFlow, AddInfoFlow, MoreInfoFlow, GPTFlow(chatGPT), GPTFlow2(chatGPT), ByeFlow]
     )
 
     module.exports = flowPrincipal;
