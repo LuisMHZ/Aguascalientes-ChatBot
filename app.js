@@ -11,12 +11,6 @@ const BaileysProvider = require("@bot-whatsapp/provider/baileys");
 const MockAdapter = require("@bot-whatsapp/database/mock");
 
 /**
- * ChatGPT
- */
-const ChatGPTClass = require("./chatgpt.class");
-const chatGPT = new ChatGPTClass();
-
-/**
  * Rutas de Camión
  */
 const flowR1 = addKeyword(["RUTA1", "RUTA 1", "ruta 1", "ruta1", "Ruta1", "Ruta 1"], { sensitive: true })
@@ -207,10 +201,9 @@ const flowRUTR = addKeyword(["RUTAUTR", "RUTA UTR"])
 /**
  * Flujos
  */
+const flowVoiceNote = require("./flows/VoiceNoteflow");
 const PrimaryFlow = require("./flows/PrimaryFlow");
 const TransportFlow = require("./flows/TransportFlow");
-const flowVoiceNote = require("./flows/VoiceNoteflow");
-const { GPTFlow } = require("./flows/GPTFlow");
 const TouristAgentFlow = require("./flows/PersonalTouristAgentFlow");
 const ByeFlow = require("./flows/ByeFlow");
 
@@ -221,14 +214,13 @@ const main = async () => {
   const adapterDB = new MockAdapter();
 
   const adapterFlow = createFlow([
-    PrimaryFlow,
     flowVoiceNote,
+    PrimaryFlow,
     TouristAgentFlow,
     flowR1, flowR2, flowR3, flowR4, flowR5, flowR6, flowR7, flowR8, flowR9, flowR10, flowR11, flowR12, flowR14, flowR16, flowR18, flowR19, flowR20N,
     flowR20S, flowR23, flowR24, flowR25, flowR27, flowR28, flowR29, flowR30, flowR33, flowR34, flowR35, flowR36, flowR37, flowR38, flowR39,
     flowR40N, flowR40S, flowR41T, flowR41A, flowR42, flowR43, flowR45, flowR46, flowR47, flowR48, flowR50, flowR50B, flowR51, flowRUTR,
     TransportFlow,
-    GPTFlow(chatGPT),
     ByeFlow
   ]);
 

@@ -4,11 +4,11 @@ const { join } = require("path");
 const delay = (ms) => new Promise((res =>  setTimeout(res, ms)))
 
 /**
- * Recuperamos el prompt de asistente turístico
+ * Recuperamos el prompt de asistente gastronómico
  */
 const getPrompt = async () => {
   const pathPromp = join(process.cwd(), "prompts");
-  const text = readFileSync(join(pathPromp, "turismo.txt"), "utf-8");
+  const text = readFileSync(join(pathPromp, "gastronomia.txt"), "utf-8");
   return text;
 };
 
@@ -19,10 +19,10 @@ const getPrompt = async () => {
  */
 
 module.exports = {
-  GPTFlow: (chatgptClass) => {
+  GPTChefFlow: (chatgptClass) => {
     return addKeyword("1", { sensitive: true })
       .addAction(async (ctx, { flowDynamic, provider }) => {
-        await flowDynamic("Preparando lo necesario para brindarte una experiencia única de Aguascalientes...");
+        await flowDynamic("Preparando lo necesario para brindarte una experiencia gastronómica de Aguascalientes...");
 
         const jid = ctx.key.remoteJid
         const refProvider = await provider.getInstance()

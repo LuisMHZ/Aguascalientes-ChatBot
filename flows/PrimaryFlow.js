@@ -3,6 +3,13 @@ const EventsFlow = require("./EventsFlow")
 const AddInfoFlow = require("./SimpleInfoFlow");
 const MoreInfoFlow = require("./MoreInfoFlow");
 const ByeFlow = require("./ByeFlow");
+const { GPTFlow } = require("./GPTTouristFlow");
+
+/**
+ * ChatGPT
+ */
+const ChatGPTClass = require("../chatgpt.class");
+const chatGPT = new ChatGPTClass();
 
 const flowPrincipal = addKeyword(['hola', 'buenas', 'ola', 'buenos días', 'buenas tardes', 'buenas noches', 'menú', 'menu', 'MENU'])
     .addAnswer('¡Hola! Soy Aguascalientes Chatbot, un experto en el turismo de la ciudad.')
@@ -22,7 +29,7 @@ const flowPrincipal = addKeyword(['hola', 'buenas', 'ola', 'buenos días', 'buen
         ['Adicionalmente, si deseas más información escribe "AGENTE" para contactarte con una persona especializada y destinada a resolver tus dudas 👌'],
         null,
         null,
-        [EventsFlow, AddInfoFlow, MoreInfoFlow, ByeFlow]
+        [EventsFlow, AddInfoFlow, MoreInfoFlow, GPTFlow(chatGPT), ByeFlow]
     )
 
     module.exports = flowPrincipal;
