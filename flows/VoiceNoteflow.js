@@ -7,10 +7,6 @@ const flowVoiceNote = addKeyword(EVENTS.VOICE_NOTE).addAction(
       console.log("🤖 Transcripción de voz a texto...");
       const text = await handlerAI(ctx);
       console.log(`🤖 Fin de la transcripción, el usuario dijo -> [TEXT]: ${text}`);
-  
-      console.log(ctxFn);
-      gotoFlow(empleado, ctxFn);
-  
     }
   );
 

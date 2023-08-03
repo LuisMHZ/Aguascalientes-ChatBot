@@ -27,7 +27,7 @@ const flowPrincipal = addKeyword(['hola', 'buenas', 'ola', 'buenos días', 'buen
         ]
     )
     .addAnswer(
-        ['Adicionalmente, si deseas más información puedes escribir "AGENTE" en cualquier momento para contactarte con una persona especializada y destinada a resolver tus dudas 👌'],
+        ['Adicionalmente, si deseas más información puedes escribir "AGENTE" en cualquier momento para contactarte con una persona especializada y destinada a resolver tus dudas 👌.'],
         null,
         null,
         [EventsFlow, AddInfoFlow, MoreInfoFlow, GPTFlow(chatGPT), GPTFlow2(chatGPT), ByeFlow]
